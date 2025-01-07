@@ -56,6 +56,17 @@ class SingleViewController: UIViewController {
         
         /// 5. Finalmente, configuramos la vista principal del controlador como la nueva vista inicial.
         self.view = initialView
+        
+        /// 6.  Agregando animación
+        let animator = UIViewPropertyAnimator(duration: 1, dampingRatio: 5) {
+            cardView.frame = CGRect(x: 40, y: 60, width: 340, height: 100)
+            titleLabel.frame = CGRect(x: 44, y: 270, width: 200, height: 40)
+            
+        }
+        
+        animator.startAnimation()
+        
+        
     }
 }
 
