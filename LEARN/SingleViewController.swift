@@ -15,13 +15,13 @@ class SingleViewController: UIViewController {
     let nameInCardLabel = UILabel()
     let imageView = UIImageView()
     let cardView = UIView()
-    
+    let descriptionLabel = UILabel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         /// 1. Vista que usaremos como la vista principal del controlador.
-        initialView.backgroundColor = .gray /// Establecemos el color de fondo de la vista
+        initialView.backgroundColor = .white /// Establecemos el color de fondo de la vista
 
         /// 2. Label que muestra "Jair was here".
         titleLabel.frame = CGRect(x: 80, y: 16, width: 272, height: 40)
@@ -48,7 +48,7 @@ class SingleViewController: UIViewController {
         cardView.backgroundColor = .white // Le damos un color de fondo rojo.
         cardView.layer.cornerRadius = 25
         cardView.layer.shadowOpacity = 0.9
-        cardView.layer.shadowColor = CGColor(red: 140/255, green: 220/255, blue: 15/255, alpha: 0.8) // Este es ese verde limon aprox
+        cardView.layer.shadowColor = .init(gray: 0.65, alpha: 1.0)
         cardView.layer.shadowOffset = CGSize(width: 0 , height: 10)
 
         /// 6. Agregamos las sub-vistas
@@ -57,16 +57,30 @@ class SingleViewController: UIViewController {
         cardView.addSubview(imageView) /// Agregamos la vista de imagen con su imagen en la tarjeta
         cardView.addSubview(nameInCardLabel) /// Agregamos  el nombre de la tarjeta en la tarjeta
         
-        /// 7. Finalmente, configuramos la vista principal del controlador como la nueva vista inicial.
+        /// 7. Configuración de  descripciónLabel
+        descriptionLabel.frame = CGRect(x: 0, y: 270, width: 350, height: 100)
+        descriptionLabel.layer.cornerRadius = 25
+        descriptionLabel.text = "Aquí tienes tu tarjeta de crédito que ahora será servirá para realizar tus compras."
+        descriptionLabel.textAlignment = .left
+        descriptionLabel.backgroundColor = .white
+        descriptionLabel.textColor = .black
+        descriptionLabel.numberOfLines = 10
+        
+        cardView.addSubview(descriptionLabel)
+        
+        /// 8. Finalmente, configuramos la vista principal del controlador como la nueva vista inicial.
         self.view = initialView
         
-        /// 6.  Agregando animación
+        /// 9.  Agregando animación
         let animator = UIViewPropertyAnimator(duration: 1, dampingRatio: 5) {
-            self.cardView.frame = CGRect(x: 40, y: 60, width: 340, height: 100)
+            self.cardView.frame = CGRect(x: 20, y: 60, width: 340, height: 100)
             self.titleLabel.frame = CGRect(x: 44, y: 270, width: 200, height: 40)
+//            self.cardView.layer.cornerRadius = 0
+//            self.imageView.layer.cornerRadius = 0
             
         }
         
+        /// 10.  Inicio de animación
         animator.startAnimation()
         
         
