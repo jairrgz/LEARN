@@ -101,7 +101,7 @@ struct SingleViewControllerPreview: UIViewControllerRepresentable {
 
     // Método para actualizar el UIViewController (opcional)
     func updateUIViewController(_ uiViewController: SingleViewController, context: Context) {
-        // No es necesario para esta vista
+        // No es ne cesario para esta vista
     }
 }
 

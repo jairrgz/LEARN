@@ -19,7 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let window = UIWindow(windowScene: windowScene)
         
         // Configurar SingleViewController como controlador raíz
-        let singleViewController = SingleViewController()
+        let singleViewController = MyViewController()
         window.rootViewController = singleViewController
         
         // Hacer que la ventana sea visible

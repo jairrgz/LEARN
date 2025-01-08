@@ -75,3 +75,48 @@ class SingleViewController: UIViewController {
     
     
 }
+
+🔹 Como mostrar tu código con Preview o PlayGround
+
+## 1.Si estás usando UIKIT recomiendo usar la Preview de SwiftUI en ves estar corriendo el simulador
+
+Para ello sigue el siguiente ejemplo:
+
+import UIKIT
+import PlaygroundSupport (No olvidar de importarlo)
+class "Nombre"ViewController: UIViewController {
+  /// tu código
+}
+
+import SwiftUI
+struct "Nombre""ViewController"Preview": UIViewControllerRepresentable {
+    // Método para crear la instancia del UIViewController
+    func makeUIViewController(context: Context) -> "Nombre"ViewController {
+        return "Nombre"ViewController()
+    }
+
+    // Método para actualizar el UIViewController (opcional)
+    func updateUIViewController(_ uiViewController: "Nombre"ViewController, context: Context) {
+        // No es ne cesario para esta vista
+    }
+}
+
+#Preview {
+    SingleViewControllerPreview()
+}
+
+
+# 2. Si no funciona el Simulador y/o el Canvas del Swiftui puedes usar hacer PlaygroundSupport en un proyecto a parte.
+
+import UIKit
+
+class "Name"ViewController: UIViewController {
+
+// Tu código
+
+
+}
+
+PlaygrounPage.current.liveView = "Name"ViewConroller
+
+ 
